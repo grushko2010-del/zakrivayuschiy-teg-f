@@ -27,11 +27,8 @@
   display: none;
 }
 
-/* ширина контента */
-
 .content-section {
-  inline-size: 100%;
-  max-inline-size: 43.75rem;
+  inline-size: var(--section-inline-size, 100%);
   margin-inline: auto;
 }
 
@@ -43,9 +40,9 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding-block: 128px 129px;
+  padding-block: 132px;
   margin-block-start: 100px;
-  margin-block-end: 100px;
+  margin-block-end: 98px;
   border: 2px solid var(--text-color, #000);
   background-color: var(--bg-color, #f3f3f3);
   font-family: var(--accent-font, fantasy);
@@ -74,19 +71,6 @@
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   font-weight: 400;
   text-transform: uppercase;
-}
-
-/* описание в шапке */
-
-.header__text {
-  font-size: 14px;
-  line-height: 1.5;
-  text-align: start;
-  padding-inline: 14px;
-}
-
-.header__text-accent {
-  font-weight: 700;
 }
 
 /* основной контент */
@@ -119,7 +103,7 @@
   padding: 5px 10px;
   font-size: 18px;
   font-variation-settings: "wght" var(--card-title-weight, 700);
-  line-height: 1.21;
+  line-height: 1;
 }
 
 /* обёртка картинки */
@@ -194,7 +178,7 @@
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: 4px;
+  gap: 12px;
   padding: 0 25px 25px;
 }
 
@@ -278,6 +262,7 @@
 
 .card__like-button {
   min-inline-size: 130px;
+  block-size: 38px;
 }
 
 /* кнопка сохранить */
@@ -328,11 +313,14 @@
 }
 
 .dialog[open] {
+  padding: 30px;
+}
+
+.dialog[open] form {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 30px 20px;
-  padding: 30px;
 }
 
 /* затемнение за модалкой */
